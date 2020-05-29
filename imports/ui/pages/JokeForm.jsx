@@ -1,4 +1,5 @@
-import { Accounts } from 'meteor/accounts-base';
+import { Meteor } from 'meteor/meteor';
+import { insertJokes } from '../../api/jokes';
 
 import React, { Component } from 'react';
 import { toast } from 'react-toastify';
@@ -14,10 +15,16 @@ class JokeForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+        if(Meteor.user()) {
+          insertJokes(this.state.joke);
+        } else {
+          toast.error("Vous devez être connecté pour ajouter une blague");
+          return;
+        }
     }
 
     handleChange = (event) => {
-        this.setState({ [event.target.name]: event.target.value });
+        this.setState({ joke: event.target.value });
     }
 
     render() {

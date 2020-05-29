@@ -1,4 +1,4 @@
-import { JokesCollection } from '../api/jokes';
+import { JokesCollection } from '../../api/jokes';
 
 import React, { Component } from 'react';
 
@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 class RandomJoke extends Component {
     state = {
         jokes: [],
-        joke: ""
+        joke: { content: "" }
     }
 
     componentDidMount() {
