@@ -5,6 +5,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import Signin from '/imports/ui/pages/Signin';
 import Signup from '/imports/ui/pages/Signup';
+import RandomJoke from '/imports/ui/pages/RandomJoke';
+import JokeForm from '/imports/ui/pages/JockForm';
 
 const App = () => {
   return (
@@ -12,6 +14,8 @@ const App = () => {
       <Switch>
         <Route exaxt path="/signin" component={Signin} />
         <Route path="/signup" component={Signup} />
+        <Route path="/random-joke" component={RandomJoke} />
+        <Route path="/joke-form" component={JokeForm} />
       </Switch>
       <ToastContainer />
     </Router>
